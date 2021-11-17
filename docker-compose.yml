@@ -23,7 +23,7 @@ services:
    # volumes:
     #  - my-db:/var/lib/mysql
   applicationService:
-    build: C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace
+    build: C:\Users\arche\.jenkins\jobs\timesheet\workspace
     image: myapp
     ports:
       - "8090:8090"
