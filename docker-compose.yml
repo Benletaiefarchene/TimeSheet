@@ -35,5 +35,5 @@ services:
 networks:
   mini_project:
     driver: bridge
-#volumes:
- # my-db: C:\Users\arche\OneDrive\Bureau\Mysql
+volumes:
+ my-db: C:\Users\arche\OneDrive\Bureau\Mysql
