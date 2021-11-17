@@ -26,7 +26,7 @@ services:
     build: C:/Users/arche/.jenkins/jobs/timesheet/workspace
     image: myapp
     ports:
-      - "8090:8090"
+      - "8091:8091"
     restart: always
     depends_on:
       - db
