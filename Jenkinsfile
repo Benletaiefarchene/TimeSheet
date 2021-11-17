@@ -49,7 +49,18 @@ pipeline {
 				}
 			}
 		}
-	     
+	     stage('docker') {
+					steps {
+						script{
+  
+ 
+                             bat "docker-compose down"
+                             bat "docker-compose up --build -d"
+                            
+                            
+						}    
+                        }   
+	}
 	    
 	   
     }
