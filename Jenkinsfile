@@ -10,7 +10,7 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: 'main']],
                 doGenerateSubmoduleConfigurations: false,gitTool: 'Default',
                 submoduleCfg: [], userRemoteConfigs: [[ 
-                url: 'https://github.com/Benletaiefarchene/TimeSheet.git']]])
+                url: 'https://github.com/azerty11xd/Esprit.git']]])
             }
         }
 		stage('Clean Tests Stage') {
