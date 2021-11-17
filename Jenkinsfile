@@ -62,35 +62,7 @@ pipeline {
                         }   
 	}
     }
-    post { 
-        success {
-                emailext (
-                    to: "${EMAIL_RECIPIENTS}",
-                    replyTo: "${EMAIL_RECIPIENTS}",
-                    subject: "[BuildResult][${currentBuild.currentResult}] - Job '${env.JOB_NAME}' (${env.BUILD_NUMBER})",
-                    mimeType: 'text/html',
-                    body: '''${JELLY_SCRIPT, template="custom-html.jelly"}'''
-                )
-        }
-		failure {
-                emailext (
-                    to: "${EMAIL_RECIPIENTS}",
-                    replyTo: "${EMAIL_RECIPIENTS}",
-                    subject: "[BuildResult][${currentBuild.currentResult}] - Job '${env.JOB_NAME}' (${env.BUILD_NUMBER})",
-                    mimeType: 'text/html',
-                    body: '''${JELLY_SCRIPT, template="custom-html.jelly"}'''
-                )
-        }
-		aborted {
-			     emailext (
-                    to: "${EMAIL_RECIPIENTS}",
-                    replyTo: "${EMAIL_RECIPIENTS}",
-                    subject: "[BuildResult][${currentBuild.currentResult}] - Job '${env.JOB_NAME}' (${env.BUILD_NUMBER})",
-                    mimeType: 'text/html',
-                    body: '''${JELLY_SCRIPT, template="custom-html.jelly"}'''
-                )
-		}
-    }
+  
     options {
         disableConcurrentBuilds()
         buildDiscarder(logRotator(numToKeepStr: '10'))
