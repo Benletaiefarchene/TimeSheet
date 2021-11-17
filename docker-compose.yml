@@ -23,7 +23,7 @@ services:
    # volumes:
     #  - my-db:/var/lib/mysql
   applicationService:
-    build: C:\Users\arche\.jenkins\jobs\timesheet\workspace
+    build: C:/Users/arche/.jenkins/jobs/timesheet/workspace
     image: myapp
     ports:
       - "8090:8090"
@@ -35,5 +35,5 @@ services:
 networks:
   mini_project:
     driver: bridge
-volumes:
- my-db: C:\Users\arche\OneDrive\Bureau\Mysql
+#volumes:
+# my-db: C:\Users\arche\OneDrive\Bureau\Mysql
