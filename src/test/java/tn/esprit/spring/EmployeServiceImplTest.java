@@ -31,7 +31,7 @@ class EmployeTest {
     @Autowired
     EntrepriseServiceImpl entrepriseService;
     private final static Logger l = LogManager.getLogger(EmployeTest.class);
-/*
+
     @Test
     void ajoutEmploye() {
         Employe employe = new Employe("taherarchene", "benletaief", "benletaief.taherarchene@esprit.tn", true, Role.CHEF_DEPARTEMENT);
@@ -42,7 +42,7 @@ class EmployeTest {
         l.info("l'employé est ajouté");
          employeService.deleteEmployeById(employe.getId());
     }
-*/
+
     
     @Test
     void getNombreEmploye() {
