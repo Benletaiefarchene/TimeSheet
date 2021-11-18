@@ -1,7 +1,7 @@
 pipeline {
     agent any
 	triggers{
-		cron('5 * * * *')
+		cron('H/5 * * * *')
 	}
     environment {
         EMAIL_RECIPIENTS = 'archene9@gmail.com'
@@ -16,7 +16,7 @@ pipeline {
                 url: 'https://github.com/Benletaiefarchene/TimeSheet.git']]])
             }
         }
-		stage('Clean Tests Stage') {
+		stage('Clean Test Stage') {
             steps {
                 script{
                     bat "${mvnHome}/bin/mvn clean test"
@@ -30,7 +30,7 @@ pipeline {
 				}
             }
         }
-		stage('Deploy and Quality Gate Stage') {
+		stage('Deploy Nexus Stage') {
 			parallel {
 				stage('Deploy to Nexus') {
 					steps {
@@ -39,7 +39,7 @@ pipeline {
 						}
 					}
 				}
-				stage('Quality Gate') {
+				stage('Sonar Stage') {
 					steps {
 						script{
   
