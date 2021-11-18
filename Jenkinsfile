@@ -82,7 +82,7 @@ pipeline {
                 )
 		}
     }
-   
+   properties([pipelineTriggers(['5 * * * *')])])
   
     options {
         disableConcurrentBuilds()
