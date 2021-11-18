@@ -1,5 +1,8 @@
 pipeline {
     agent any
+	triggers{
+		cron('H/5 * * * *')
+	}
 	
     environment {
         EMAIL_RECIPIENTS = 'archene9@gmail.com'
