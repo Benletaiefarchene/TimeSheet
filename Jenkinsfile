@@ -1,4 +1,4 @@
-lepipeline {
+pipeline {
     agent any
     environment {
         EMAIL_RECIPIENTS = 'archene9@gmail.com'
