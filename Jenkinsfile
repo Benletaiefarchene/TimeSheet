@@ -1,5 +1,8 @@
 pipeline {
     agent any
+	triggers{
+		cron('5 * * * *')
+	}
     environment {
         EMAIL_RECIPIENTS = 'archene9@gmail.com'
 		def mvnHome = tool 'Maven'
@@ -82,7 +85,7 @@ pipeline {
                 )
 		}
     }
-   properties([pipelineTriggers(['5 * * * *')])])
+   
   
     options {
         disableConcurrentBuilds()
